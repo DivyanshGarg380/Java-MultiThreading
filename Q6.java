@@ -102,11 +102,6 @@ class Cleaner extends Thread {
     }
 
     public void run(){
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {
-            System.out.println("Error in Cleaner Thread");
-        }
         hotel.cleanRoom();
     }
 }
