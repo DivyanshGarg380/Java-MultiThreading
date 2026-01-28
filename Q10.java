@@ -119,29 +119,29 @@ class CancelThread extends Thread {
 
 public class Q10 {
     public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        Multiplex m=new Multiplex();
+        Scanner sc = new Scanner(System.in);
+        Multiplex m = new Multiplex();
 
         while(true){
             System.out.println("\n1.Book Ticket\n2.Cancel Ticket\n3.Exit");
-            int ch=sc.nextInt();
+            int ch = sc.nextInt();
 
             switch(ch){
                 case 1:
                     System.out.print("Name: ");
-                    String n=sc.next();
+                    String n = sc.next();
                     System.out.print("Seat Type (SILVER/GOLD/PLATINUM): ");
-                    SeatType t=SeatType.valueOf(sc.next().toUpperCase());
+                    SeatType t = SeatType.valueOf(sc.next().toUpperCase());
                     System.out.print("Quantity: ");
-                    Integer q=sc.nextInt();
+                    Integer q = sc.nextInt();
                     new BookingThread(m,n,t,q).start();
                     break;
 
                 case 2:
                     System.out.print("Seat Type to cancel: ");
-                    SeatType ct=SeatType.valueOf(sc.next().toUpperCase());
+                    SeatType ct = SeatType.valueOf(sc.next().toUpperCase());
                     System.out.print("Quantity: ");
-                    Integer cq=sc.nextInt();
+                    Integer cq = sc.nextInt();
                     new CancelThread(m,ct,cq).start();
                     break;
 
